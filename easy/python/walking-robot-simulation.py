@@ -33,7 +33,7 @@ class Solution(object):
                         [0, -1],
                         [-1, 0]
                      ]
-        direction_index, x_axis, y_axis, res = 0, 0, 0, 0
+        direction_index, row, column, res = 0, 0, 0, 0
         for command in commands:
             if command == -1:
                 direction_index += 1
@@ -44,11 +44,11 @@ class Solution(object):
                 if direction_index < 0:
                     direction_index = 3
             else:
-                while command > 0 and str(x_axis + directions[direction_index][0]) + '-' + str(y_axis + directions[direction_index][1]) not in obs_grid:
-                    x_axis += directions[direction_index][0]
-                    y_axis += directions[direction_index][1]
+                while command > 0 and str(row + directions[direction_index][0]) + '-' + str(column + directions[direction_index][1]) not in obs_grid:
+                    row += directions[direction_index][0]
+                    column += directions[direction_index][1]
                     command -= 1
-            res = max(res, x_axis * x_axis + y_axis * y_axis)
+            res = max(res, row * row + column * column)
         return res
 
 
