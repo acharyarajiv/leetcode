@@ -25,7 +25,7 @@ class Solution(object):
                 res_dict[num] = str(index + 1)
 
         # nums_clone has input data in original order
-        # create output with relative ranks
+        # create output with relative rank
         res = []
         for num in nums_clone:
             res.append(res_dict[num])
